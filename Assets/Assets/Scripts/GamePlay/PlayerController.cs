@@ -11,11 +11,6 @@ public class PlayerController : Singleton<PlayerController>
     public Trung trung;
     public Trung[] eggs;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
     public void Play()
     {
         play = true;
@@ -43,7 +38,7 @@ public class PlayerController : Singleton<PlayerController>
         transform.position += Vector3.up * high;
 
         Instantiate(trung, pos, Quaternion.identity);
-        
+
         MasterAudioManager.Play2DSfx(AudioConst.Jump);
     }
 }

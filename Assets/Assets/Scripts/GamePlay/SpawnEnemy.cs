@@ -10,13 +10,6 @@ public class SpawnEnemy : MonoBehaviour
 
     public float time = 2, timeCount = 2;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-
 
     private void Spawn()
     {
@@ -26,16 +19,14 @@ public class SpawnEnemy : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.Instance.currentState == State.Playing)
+        if (GameManager.Instance.currentState != State.Playing) return;
+        time -= Time.deltaTime;
+
+        if (time <= 0)
         {
-            time -= Time.deltaTime;
+            time = timeCount;
 
-            if (time <= 0)
-            {
-                time = timeCount;
-
-                Spawn();
-            }
+            Spawn();
         }
     }
 }

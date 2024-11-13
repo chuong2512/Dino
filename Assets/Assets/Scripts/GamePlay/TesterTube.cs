@@ -14,7 +14,8 @@ public class TesterTube : MonoBehaviour
     {
         ChooseObj.SetActive(true);
     }
-    public void Painting()
+
+    private void Painting()
     {
         for (int i = 0; i < colour.Length; i++)
         {
@@ -49,6 +50,7 @@ public class TesterTube : MonoBehaviour
         colors.Add(color);
         Painting();
     }
+
     public void SetFullColor(Color color)
     {
         colors = new List<Color>();
@@ -60,7 +62,6 @@ public class TesterTube : MonoBehaviour
         }
     }
 
-    
 
     public void RemoveColour()
     {
@@ -68,7 +69,6 @@ public class TesterTube : MonoBehaviour
         Painting();
     }
 
-    
 
     public void MoveToTube(TesterTube moveTube, bool checkColor = false)
     {
@@ -100,14 +100,13 @@ public class TesterTube : MonoBehaviour
         }
     }
 
-    
 
     public bool CheckTrueTube()
     {
         return colors.Count == 0
                || (colors.Count == 4 && colors[0] == colors[1] && colors[1] == colors[2] && colors[2] == colors[3]);
     }
-    
+
     public void MoveToTubeRan(TesterTube moveTube)
     {
         if (moveTube.colors.Count >= 4)

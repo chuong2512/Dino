@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ColorTube : MonoBehaviour
 {
-   public SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
 
-   public void SetColor(Color color)
-   {
-      spriteRenderer.color = color;
-   }
+    public void SetColor(Color color)
+    {
+        spriteRenderer.color = color;
+    }
 }

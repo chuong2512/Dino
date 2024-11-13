@@ -23,26 +23,20 @@ public class TheLevelTMP : Singleton<TheLevelTMP>
 
     void Update()
     {
-        if (GameManager.Instance.currentState == State.Playing)
-        {
-            time -= Time.deltaTime;
+        if (GameManager.Instance.currentState != State.Playing) return;
+        time -= Time.deltaTime;
 
-            if (time <= 0)
-            {
-                Add();
-                time = 1;
-            }
-        }
+        if (!(time <= 0)) return;
+        Add();
+        time = 1;
     }
 
-    public void Add()
+    private void Add()
     {
-        if (GameManager.Instance.currentState == State.Playing)
-        {
-            point++;
-            textMeshProUgui.SetText($"{point}");
+        if (GameManager.Instance.currentState != State.Playing) return;
+        point++;
+        textMeshProUgui.SetText($"{point}");
 
-            ScoreManager.Score = point;
-        }
+        ScoreManager.Score = point;
     }
 }

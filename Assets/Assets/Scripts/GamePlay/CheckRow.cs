@@ -5,9 +5,11 @@ using UnityEngine;
 public class CheckRow : MonoBehaviour
 {
     public float side;
+
     // Use this for initialization
-    void Start ()
+    void Start()
     {
-        transform.position = new Vector3 (0, side * (Camera.main.orthographicSize * Camera.main.aspect + 0.5f), transform.position.z);
+        transform.position = new Vector3(0, side * (Camera.main.orthographicSize * Camera.main.aspect + 0.5f),
+            transform.position.z);
     }
 }
