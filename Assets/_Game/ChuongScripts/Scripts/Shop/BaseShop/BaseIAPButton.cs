@@ -9,7 +9,7 @@ namespace ChuongCustom
         protected override void OnClickButton()
         {
             IAPManager.OnPurchaseSuccess = OnBuySuccess;
-            IAPManager.Instance.BuyProductID(package_id);
+            //IAPManager.Instance.BuyProductID(package_id);
         }
         protected abstract void OnBuySuccess();
         protected abstract override void OnStart();
